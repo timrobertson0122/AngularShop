@@ -2,6 +2,10 @@
   "name": "angularshop",
   "version": "1.0.0",
   "description": "fashion store",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.1.x"
+  },
   "main": "index.js",
   "scripts": {
     "test": "karma start test/karma.conf.js"
