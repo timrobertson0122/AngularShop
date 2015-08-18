@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ClothesShop">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Shop</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/shopController.js"></script>
+  </head>
+  <body class='container' ng-controller='ShopController as shop'>
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in shop.products">
+        <h3>
+          {{product.name}}
+          <em class="pull-right">{{product.price | currency:"£"}}</em>
+        </h3>
+        <!-- Image Gallery  -->
+        <div class="gallery" ng-show='product.images.length'>
+          <img class="img img-circle img-thumbnail center-block" ng-src="{{product.images[0]}}" />
+          <ul class="clearfix">
+            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

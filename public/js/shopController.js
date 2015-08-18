@@ -1,5 +1,6 @@
 app.controller('ShopController', function() {
   this.products = items;
+  this.cart = [];
 });
 
 var items = [
@@ -8,9 +9,9 @@ var items = [
     quantity: 4, 
     category: "Womens Footwear",
     images: [
-      "public/images/blue-suede-shoes-2.jpg",
-      "public/images/blue-suede-shoes-3.jpg",
-      "public/images/blue-suede-shoes-4.jpg"
+      "images/blue-suede-shoes-2.jpg",
+      "images/blue-suede-shoes-3.jpg",
+      "images/blue-suede-shoes-4.jpg"
       ]
   },
   { name: "Almond Toe Court Shoes, Patent Black", 
@@ -18,7 +19,7 @@ var items = [
     quantity: 5, 
     category: "Womens Footwear", 
     images: [
-      "public/images/almond-toe-court-shoes.jpeg"
+      "images/almond-toe-court-shoes.jpeg"
       ]
   },
   { name: "Leather Driver Saddle Loafers, Tan", 
@@ -26,7 +27,7 @@ var items = [
     quantity: 12, 
     category: "Mens Footwear", 
     images: [
-      "public/images/leather-driver-saddle-loafers.jpg"
+      "images/leather-driver-saddle-loafers.jpg"
       ]
   },
   { name: "Flip Flops, Red", 
@@ -34,7 +35,7 @@ var items = [
     quantity: 6, 
     category: "Mens Footwear",
     images: [
-      "public/images/flip-flops.jpg"
+      "images/flip-flops.jpg"
       ]
   },
   { name: "Flip Flops, Blue", 
@@ -42,7 +43,7 @@ var items = [
     quantity: 0, 
     category: "Mens Footwear",
     images: [
-      "public/images/flip-flops-blue.jpg"
+      "images/flip-flops-blue.jpg"
       ]
   },
   { name: "Gold Button Cardigan, Black", 
@@ -50,7 +51,7 @@ var items = [
     quantity: 6, 
     category: "Womens Casual", 
     images: [
-      "public/images/gold-button-cardigan.jpg"
+      "images/gold-button-cardigan.jpg"
       ]
   },
   { name: "Cotton Shorts, Medium Red", 
@@ -58,7 +59,7 @@ var items = [
     quantity: 5, 
     category: "Womens Casual", 
     images: [
-      "public/images/cotton-shorts-red.jpeg"
+      "images/cotton-shorts-red.jpeg"
       ]
   },
   { name: "Fine Stripe Short Sleeve Shirt, Grey", 
@@ -66,7 +67,7 @@ var items = [
     quantity: 9, 
     category: "Mens Casual", 
     images: [
-      "public/images/short-sleeve-shirt-grey.jpeg"
+      "images/short-sleeve-shirt-grey.jpeg"
       ]
   },
   { name: "Fine Stripe Short Sleeve Shirt, Green",
@@ -74,7 +75,7 @@ var items = [
     quantity: 3, 
     category: "Mens Casual", 
     images: [
-      "public/images/short-sleeve-shirt-green.jpg"
+      "images/short-sleeve-shirt-green.jpg"
       ]
   },
   { name: "Bird Print Dress, Black", 
@@ -90,7 +91,7 @@ var items = [
     quantity: 5, 
     category: "Womens Formal", 
     images: [
-      "public/images/cut-out-dress-pink.jpeg"
+      "images/cut-out-dress-pink.jpeg"
       ]
   },
   { name: "Sharkskin Waistcoat, Charcoal", 
@@ -98,7 +99,7 @@ var items = [
     quantity: 6, 
     category: "Mens Formal", 
     images: [
-      "public/images/waistcoat-grey.jpg"
+      "images/waistcoat-grey.jpg"
       ]
   },
   { name: "Lightweight Patch Pocket Blazer, Deer", 
@@ -106,7 +107,7 @@ var items = [
     quantity: 1, 
     category: "Mens Formal", 
     images: [
-      "public/images/blazer-deer.jpeg"
+      "images/blazer-deer.jpeg"
       ]
   }
 ];
