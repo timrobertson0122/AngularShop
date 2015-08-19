@@ -10,11 +10,17 @@
     <script src="js/app.js"></script>
     <script src="js/shopController.js"></script>
   </head>
-  <body class='container' ng-controller='ShopController as shop'>
+  <body ng-controller='ShopController as ctrl'>
+  <div class="navbar navbar-default navbar-fixed-top">
+    <button class="cart btn navbar-btn navbar">Shopping Cart [ {{ctrl.cart.length}} ]</button>
+  </div>
+
+
+
     <!--  Products Container  -->
     <div class="list-group">
       <!--  Product Container  -->
-      <div class="list-group-item" ng-repeat="product in shop.products">
+      <div class="list-group-item" ng-repeat="product in ctrl.productList.items">
         <h3>
           {{product.name}}
           <em class="pull-right">{{product.price | currency:"£"}}</em>
@@ -25,6 +31,7 @@
           <ul class="clearfix">
             <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
           </ul>
+          <button ng-click='ctrl.addProduct(product)' class="btn btn btn-success addItem">Add to Cart</button>
         </div>
 
       </div>
