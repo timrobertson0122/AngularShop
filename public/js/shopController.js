@@ -8,6 +8,10 @@ clothesShop.controller('ShopController', [function() {
     self.cart.push(item);
   };
 
+  self.removeProduct = function(item) {
+    self.cart.splice(self.cart.indexOf(item), 1);
+  };
+
   self.productList = {
     "items": [
       { name: "Suede Shoes, Blue", 

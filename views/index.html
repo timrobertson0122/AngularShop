@@ -32,6 +32,7 @@
             <li class="small-image pull-left thumbnail" ng-repeat="image in product.images"> <img ng-src="{{image}}" /> </li>
           </ul>
           <button ng-click='ctrl.addProduct(product)' class="btn btn btn-success addItem">Add to Cart</button>
+          <button ng-click='ctrl.removeProduct(product)' class='btn btn-success removeItem'>Remove from Cart</button>
         </div>
 
       </div>
