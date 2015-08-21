@@ -24,7 +24,6 @@
     "protractor": "^2.1.0"
   },
   "dependencies": {
-    "express": "^4.13.3",
-    "ejs": "^2.3.2"
+    "express": "^4.13.3"
   }
 }

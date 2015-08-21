@@ -1,0 +1,84 @@
+a {
+  cursor: pointer; cursor: hand;
+  text-decoration: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+#basket-total {
+  clear: both;
+  float: right;
+}
+
+#brand, #search-box {
+  color: #FFFFFF;
+}
+
+#error-message {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
+
+#five-pound-voucher, #ten-pound-voucher, #fifteen-pound-voucher {
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+#shopping-basket {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+#shopping-basket-container {
+  border: solid;
+  border-color: #337ab7;
+  padding-bottom: 40px;
+}
+
+#sub-total {
+  float: right;
+}
+
+.basket-item, .remove-basket-item, .basket-price {
+  display: inline-block;
+  padding: 2px;
+}
+
+.header {
+  background-color: #337ab7;
+}
+
+.input-box {
+  color: black;
+}
+
+.item-panel {
+  list-style-type: none;
+}
+
+.navbar-default {
+  background-color: #337ab7;
+  border-color: #E7E7E7;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.totals {
+  list-style-type: none;
+  padding-right: 0px;
+}
+
+.vouchers {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.thumbnail:hover {
+  background-color: yellow;
+}
