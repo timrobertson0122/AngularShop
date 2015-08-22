@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').createServer(app);
 
 app.use(express.static(__dirname + '/public'));
+app.use('/bower_components',express.static(__dirname + '/bower_components'));
 
 app.get('/', function(request, response){
   response.send('index.html');

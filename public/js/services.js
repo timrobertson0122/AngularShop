@@ -1,6 +1,6 @@
-clothesShop.factory('Products', ['Flash', '$http', function(Flash, $http){
+clothesShop.factory('Products', ['$http', function($http){
   
-  var products = $http.get('/products/products.json').success(function(response) {
+  var products = $http.get('products/products.json').then(function(response) {
     return response;
   });
   var service = {};
@@ -38,7 +38,8 @@ clothesShop.factory('Products', ['Flash', '$http', function(Flash, $http){
     return result;
   };
 
-});
+  return service;
+}]);
 
 
 
