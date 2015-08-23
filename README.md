@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/timrobertson0122/AngularShop.svg?branch=master)](https://travis-ci.org/timrobertson0122/AngularShop)
+[![Code Climate](https://codeclimate.com/github/timrobertson0122/AngularShop/badges/gpa.svg)](https://codeclimate.com/github/timrobertson0122/AngularShop)
 
 # AngularShop
 
