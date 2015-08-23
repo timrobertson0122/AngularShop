@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/timrobertson0122/AngularShop.svg?branch=master)](https://travis-ci.org/timrobertson0122/AngularShop)
+[![Code Climate](https://codeclimate.com/github/timrobertson0122/AngularShop/badges/gpa.svg)](https://codeclimate.com/github/timrobertson0122/AngularShop)
 
 # AngularShop
 
@@ -66,3 +67,13 @@ Vouchers
 
 £15.00 off when you have bought at least one footwear item and spent over £75.00
 ```
+
+Future Features
+---------------
+
+* Better styling, e.g. hover over image 'Add to Basket' text
+* Consider ng-show logic to only display available vouchers based on current products in shopping basket
+* Individual product info pages
+* Attach a database for product information, probably MongoDB
+* Establish persistence across page refresh, add authenticated users
+* Checkout functionality with payment processing, possibly Stripe
