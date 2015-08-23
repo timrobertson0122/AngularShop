@@ -71,9 +71,9 @@ Vouchers
 Future Features
 ---------------
 
-* Better styling, hover over image 'Add to Basket' text
-* Consider ng-show to only display available vouchers based on current products in shopping basket
-* Product info pages
+* Better styling, e.g. hover over image 'Add to Basket' text
+* Consider ng-show logic to only display available vouchers based on current products in shopping basket
+* Individual product info pages
 * Attach a database for product information, probably MongoDB
 * Establish persistence across page refresh, add authenticated users
-* Checkout functionality with payment processing, possible Stripe
+* Checkout functionality with payment processing, possibly Stripe
