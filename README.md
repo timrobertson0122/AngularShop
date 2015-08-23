@@ -2,21 +2,40 @@
 
 # AngularShop
 
+![Screen shot](public/images/screenshot.png)
+
 Brief
 -----
 
 Develop a responsive website for a clothing retailer, satisfying the user stories below.
 
+Technologies
+------------
+
+* Developed in AngularJS
+* Node Express server
+* Unit tested with Karma
+* Feature tested with Protractor
+* Styled with Bootstrap
+
 Site Setup
 ----------
 
-clone this repo
-...
+* Clone this repo
+* Run ```bower install``` and ```npm install``` in the command line
+* Run ```npm start``` in the command line
+* Navigate to ```localhost:4567``` in your browser.  
 
 Testing Setup
 -------------
 
-...
+For unit tests, run ```npm test``` in the command line
+
+For feature tests, run the following in the command line:
+* ```npm start ```
+* ```webdriver-manager start```
+* ```protractor test/e2e/conf.js```
+
 
 User Stories
 ------------
