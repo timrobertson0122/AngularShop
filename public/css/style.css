@@ -1,3 +1,11 @@
+#shopping-basket-container {
+  margin-top: 50px;
+}
+
+body {
+  padding-top: 50px;
+}
+
 a {
   cursor: pointer; cursor: hand;
   text-decoration: none;
@@ -60,8 +68,8 @@ h3 {
   list-style-type: none;
 }
 
-.navbar-default {
-  background-color: #337ab7;
+.navbar {
+  background-color: green;
   border-color: #E7E7E7;
 }
 

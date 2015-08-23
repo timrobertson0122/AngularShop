@@ -16,8 +16,8 @@
   </head>
 
   <body ng-controller="ShopController as ctrl">
+    <header class="navbar navbar-fixed-top navbar-default">
     <div class="container">
-      <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
             <a id="brand" class="navbar-brand" href="/">Angular Shop</a>
@@ -28,8 +28,8 @@
             </li>
           </ul>
         </div>
-      </nav>
     <div>
+  </header>
     <div flash-message="4000" class="errors" id="errors"></div>
     <section class="col-sm-8 no-padding-left">
       <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
