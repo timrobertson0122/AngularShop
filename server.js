@@ -9,7 +9,7 @@ app.get('/', function(request, response){
   response.send('index.html');
 });
 
-server.listen(4567, function(){
+server.listen(process.env.PORT || 4567, function(){
   console.log("Server listening on port 4567");
 });
 
