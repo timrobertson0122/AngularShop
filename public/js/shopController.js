@@ -1,6 +1,5 @@
-clothesShop.controller('ShopController', ['$scope', 'Products', function($scope, Products) {
+clothesShop.controller('ShopController', ['$http', '$scope', 'Products', function($http, $scope, Products) {  
   var self = this;
-  Products.getProducts().then(function(data){
-    $scope.productList = Products.getProducts();
-  });
+  
+  self.products = Products;
 }]);
