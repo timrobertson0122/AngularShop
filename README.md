@@ -66,3 +66,13 @@ Vouchers
 
 £15.00 off when you have bought at least one footwear item and spent over £75.00
 ```
+
+Future Features
+---------------
+
+* Better styling, hover over image 'Add to Basket' text
+* Consider ng-show to only display available vouchers based on current products in shopping basket
+* Product info pages
+* Attach a database for product information, probably MongoDB
+* Establish persistence across page refresh, add authenticated users
+* Checkout functionality with payment processing, possible Stripe
