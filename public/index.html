@@ -9,6 +9,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
     <script src="js/app.js"></script>
     <script src="js/shopController.js"></script>
     <script src="js/shopFactory.js"></script>
@@ -47,6 +48,8 @@
       </div>
     </section>
 
+    <div flash-message="4000" class="errors"></div>
+    
     <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-sm-4">
       <h3 >Shopping Basket</h3>
       <ul id="shopping-basket">

@@ -1,4 +1,4 @@
-clothesShop.factory('Products', function(){
+clothesShop.factory('Products', ['Flash', function(Flash){
   
   var service = {};
   var shoppingBasket = [];
@@ -46,9 +46,14 @@ clothesShop.factory('Products', function(){
   };
 
   service.addItemToBasket = function(item) {
-    shoppingBasket.push(item);
-    service.shoppingBasketVisible = true;
-    service.getBasketTotal();
+    if(item.quantity >= 1) {
+      shoppingBasket.push(item);
+      item.quantity --;
+      service.shoppingBasketVisible = true;
+    } else {
+      Flash.create('danger', 'Sorry, that item is out of stock');
+    };
+      service.getBasketTotal();  
   };
 
   service.removeItemFromBasket = function(item) {
@@ -57,7 +62,7 @@ clothesShop.factory('Products', function(){
   };
 
   return service;
-});
+}]);
 
 
 

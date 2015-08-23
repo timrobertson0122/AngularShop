@@ -51,5 +51,18 @@ describe('factory: Products', function() {
       products.addItemToBasket(sampleItemNotShoes);
       expect(products.basketTotal).toEqual(72.00);
     });
+
+    it('adding a product to the shopping basket reduces that products quantity by one', function() {
+      expect(sampleItemShoes.quantity).toEqual(4);
+      products.addItemToBasket(sampleItemShoes);
+      expect(sampleItemShoes.quantity).toEqual(3);
+    });
+
+    it('wont add a product to the shopping basket when its available quantity is less than one', function() {
+      for (var i = 5; i >= 0; i--) {
+        products.addItemToBasket(sampleItemShoes);
+      };
+      expect(products.shoppingBasket.length).toEqual(4);
+    });
   })
 })
