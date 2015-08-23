@@ -37,9 +37,10 @@ describe('ShopController', function() {
     expect(ctrl.shoppingBasket).toEqual([]);
   });
 
-  it('can display the total cost of the shopping basket items', function() {
+  it('can calculate the total cost of the shopping basket items', function() {
     ctrl.addItemToBasket(sampleItem);
-    expect(ctrl.basketTotal).toEqual(42.00);
+    ctrl.addItemToBasket(sampleItem2);
+    expect(ctrl.basketTotal).toEqual(141.00);
   });
 
 });

@@ -47,7 +47,7 @@ clothesShop.factory('Products', function(){
 
   service.addItemToBasket = function(item) {
     shoppingBasket.push(item);
-    shoppingBasketVisible = true;
+    service.shoppingBasketVisible = true;
     service.getBasketTotal();
   };
 

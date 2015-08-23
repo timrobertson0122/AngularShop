@@ -25,28 +25,27 @@
             <li class="pull-right">
               <a><span id="basket-header-total" class="badge">Basket Total : {{ctrl.products.basketTotal| currency:"£"}}</span></a>
             </li>
-            <li class="pull-right">
-              <a id="search-box">Search: <input ng-model="query" class="input-box"></a>
-            </li>
           </ul>
         </div>
       </nav>
     <div>
-  
-    <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
-      <h3>{{header}}</h3>
-      <div class="row">
-        <div class="Items" ng-repeat="item in category">
-          <div class="col-md-6 products">
-              <img ng-src="{{item.image}}">
-              <div class="shop-item caption">
-                <strong>{{item.name}}<span class="pull-right">{{item.price | currency:"£"}}</span></strong>
-                <p>{{item.category}}<span class="pull-right">{{item.quantity}} available</span></p>
-              </div>
+    <section class="col-sm-8 no-padding-left">
+      <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
+        <h3>{{header}}</h3>
+        <div class="row">
+          <div class="Items" ng-repeat="item in category">
+            <div class="col-md-3 products">
+                <img ng-src="{{item.image}}">
+                <div class="shop-item caption">
+                  <strong>{{item.name}}<span class="pull-right">{{item.price | currency:"£"}}</span></strong>
+                  <p>{{item.category}}<span class="pull-right">{{item.quantity}} available</span></p>
+                  <button ng-click="ctrl.products.addItemToBasket(item)" class="btn btn-info productButton">Add to Basket</button>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-sm-4">
       <h3 >Shopping Basket</h3>
