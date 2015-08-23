@@ -4,8 +4,6 @@
   "authors": [
     "Tim <timrobertson0122@gmail.com>"
   ],
-  "description": "A simple responsive clothing retailer website",
-  "main": "server.js",
   "license": "MIT",
   "ignore": [
     "**/.*",

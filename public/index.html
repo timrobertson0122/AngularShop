@@ -30,6 +30,7 @@
         </div>
       </nav>
     <div>
+    <div flash-message="4000" class="errors"></div>
     <section class="col-sm-8 no-padding-left">
       <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
         <h3>{{header}}</h3>
@@ -46,10 +47,7 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <div flash-message="4000" class="errors"></div>
-    
+    </section>    
     <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-sm-4">
       <h3 >Shopping Basket</h3>
       <ul id="shopping-basket">

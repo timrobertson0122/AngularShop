@@ -61,6 +61,10 @@ clothesShop.factory('Products', ['Flash', function(Flash){
     service.getBasketTotal();
   };
 
+  service.emptyBasket = function() {
+    shoppingBasket.length = 0;
+  }
+
   return service;
 }]);
 

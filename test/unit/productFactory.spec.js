@@ -46,6 +46,13 @@ describe('factory: Products', function() {
       expect(products.shoppingBasket).toEqual([sampleItemShoes]);
     });
 
+    it('can empty the shopping basket of all products', function() {
+      products.addItemToBasket(sampleItemShoes);
+      products.addItemToBasket(sampleItemShoes);
+      products.emptyBasket();
+      expect(products.shoppingBasket).toEqual([]);
+    })
+
     it('knows the total cost of the products in the shopping basket', function() {
       products.addItemToBasket(sampleItemShoes);
       products.addItemToBasket(sampleItemNotShoes);
@@ -64,5 +71,5 @@ describe('factory: Products', function() {
       };
       expect(products.shoppingBasket.length).toEqual(4);
     });
-  })
-})
+  });
+});
