@@ -72,4 +72,14 @@ describe('factory: Products', function() {
       expect(products.shoppingBasket.length).toEqual(4);
     });
   });
+  
+  describe('vouchers', function() {
+
+    it('can apply a £5 voucher to any order', function() {
+      products.addItemToBasket(sampleItemShoes);
+      products.applyVoucher(5);
+      expect(products.basketTotal).toEqual(37);
+    });
+    
+  })
 });

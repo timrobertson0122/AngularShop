@@ -7,7 +7,7 @@ clothesShop.factory('Products', ['Flash', function(Flash){
   service.basketTotal = 0;
   service.shoppingBasket = shoppingBasket;
   service.shoppingBasketVisible = false;
-  service.fivePoundDiscout = false;
+  service.fivePoundDiscount = false;
   service.tenPoundDiscount = false;
   service.fifteenPoundDiscount = false;
 
@@ -63,6 +63,13 @@ clothesShop.factory('Products', ['Flash', function(Flash){
 
   service.emptyBasket = function() {
     shoppingBasket.length = 0;
+    service.getBasketTotal();
+  };
+
+  service.applyVoucher = function(voucher) {
+    if(shoppingBasket.length >= 1) {
+
+    }
   }
 
   return service;

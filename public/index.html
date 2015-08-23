@@ -77,6 +77,7 @@
             <p id="basket-total">Total : {{ctrl.products.basketTotal| currency:"£"}}</p>
           </li>
         </ul>
+        <button ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
       </div>
     </div>
   </body>
