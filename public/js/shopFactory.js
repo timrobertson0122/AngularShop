@@ -2,7 +2,6 @@ clothesShop.factory('Products', ['Flash', function(Flash){
   
   var service = {};
   var shoppingBasket = [];
-  var vouchers = [];
 
   service.basketTotal = 0;
   service.shoppingBasket = shoppingBasket;
@@ -12,7 +11,7 @@ clothesShop.factory('Products', ['Flash', function(Flash){
   service.fifteenPoundDiscount = false;
 
   service.productList = {
-  "Womens Footwear": [{name: "Suede Shoes, Blue", price: 42.00, quantity: 4, category: "Womens Footwear", image: "images/blue-suede-shoes-2.jpg"},
+  "Womens Footwear": [{name: "Suede Shoes, Blue", price: 42.00, quantity: 4, category: "Womens Footwear", image: "images/blue-suede-shoes.jpg"},
                       {name: "Almond Toe Court Shoes, Patent Black", price: 99.00, quantity: 5, category: "Womens Footwear", image: "images/almond-toe-court-shoes.jpeg"}],
   "Mens Footwear":   [{name: "Leather Driver Saddle Loafers, Tan", price: 34.00, quantity: 12, category: "Mens Footwear", image: "images/leather-driver-saddle-loafers.jpg"},
                       {name: "Flip Flops, Red", price: 19.00, quantity: 6, category: "Mens Footwear", image: "images/flip-flops.jpg"},
@@ -25,6 +24,12 @@ clothesShop.factory('Products', ['Flash', function(Flash){
                       {name: "Mid Twist Cut-Out Dress, Pink", price: 540.00, quantity: 5, category: "Womens Formal", image: "images/cut-out-dress-pink.jpeg"}],
   "Mens Formal":     [{name: "Sharkskin Waistcoat, Charcoal", price: 75.00, quantity: 6, category: "Mens Formal", image: "images/waistcoat-grey.jpg"},
                       {name: "Lightweight Patch Pocket Blazer, Deer", price: 175.50, quantity: 1, category: "Mens Formal", image: "images/blazer-deer.jpeg"}]
+  };
+
+  service.availableDiscounts = function() {
+    service.fivePoundDiscount = true;
+    service.tenPoundDiscount = true;
+    service.fifteenPoundDiscount = true;
   };
 
   service.getBasketTotal = function() {
@@ -45,34 +50,76 @@ clothesShop.factory('Products', ['Flash', function(Flash){
     },0);
   };
 
+  service.discountTotal = function() {
+    var result = service.subTotal() - service.basketTotal;
+    return result;
+  }
+
+  service.itemAvailable = function(item) {
+    return (parseInt(item.quantity) > 0);
+   };
+
   service.addItemToBasket = function(item) {
-    if(item.quantity >= 1) {
+    if(service.itemAvailable(item)) {
       shoppingBasket.push(item);
-      item.quantity --;
       service.shoppingBasketVisible = true;
+      service.availableDiscounts();
+      item.quantity --;
     } else {
-      Flash.create('danger', 'Sorry, that item is out of stock');
+      Flash.create('danger', 'Sorry, that item is out of stock.');
     };
       service.getBasketTotal();  
   };
 
   service.removeItemFromBasket = function(item) {
     shoppingBasket.pop(item);
+    if (service.shoppingBasket.length === 0) {
+      service.shoppingBasketVisible = false;
+    }
     service.getBasketTotal();
   };
 
   service.emptyBasket = function() {
     shoppingBasket.length = 0;
+    service.shoppingBasketVisible = false;
     service.getBasketTotal();
   };
 
-  service.applyVoucher = function(voucher) {
-    if(shoppingBasket.length >= 1) {
-
+  service.orderShoes = function() {
+    for (var i = shoppingBasket.length -1; i >= 0; i--) {
+      if(shoppingBasket[i].category.indexOf("Footwear") >= 0) {
+        return true;
+      }
     }
-  }
+  };
+
+  service.applyFivePoundDiscount = function() {
+    if (service.fivePoundDiscount) {
+      service.basketTotal -= 5.00;
+      service.fivePoundDiscount = false;
+    }
+  };
+
+  service.applyTenPoundDiscount = function() {
+    if (service.basketTotal < 50.00){
+      Flash.create('danger', 'Sorry, you must spend over £50.');
+    } else if (service.tenPoundDiscount) {
+      service.basketTotal -= 10.00;
+      service.tenPoundDiscount = false;
+    }
+  };
+
+  service.applyFifteenPoundDiscount = function() {
+    if (service.basketTotal < 75.00 || !service.orderShoes()){
+      Flash.create('danger', 'Sorry, discount only available for orders over £75 and including at least one item of footwear');
+    } else if (service.fifteenPoundDiscount) {
+      service.basketTotal -= 15.00;
+      service.fifteenPoundDiscount = false;
+    }
+  };
 
   return service;
+
 }]);
 
 

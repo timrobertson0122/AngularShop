@@ -30,21 +30,21 @@
         </div>
       </nav>
     <div>
-    <div flash-message="4000" class="errors"></div>
+    <div flash-message="4000" class="errors" id="errors"></div>
     <section class="col-sm-8 no-padding-left">
       <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
         <h3>{{header}}</h3>
-        <div class="row">
           <div class="Items" ng-repeat="item in category">
             <div class="col-md-3 products">
+              <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton">
                 <img ng-src="{{item.image}}">
                 <div class="shop-item caption">
                   <strong>{{item.name}}<span class="pull-right">{{item.price | currency:"£"}}</span></strong>
                   <p>{{item.category}}<span class="pull-right">{{item.quantity}} available</span></p>
-                  <button ng-click="ctrl.products.addItemToBasket(item)" class="btn btn-info productButton">Add to Basket</button>
-                </div>
+<!--                   <button ng-show="ctrl.products.itemAvailable()" ng-click="ctrl.products.addItemToBasket(item)" class="btn btn-info addToBasketButton">Add to Basket</button>
+ -->                </div>
+              </a>
             </div>
-          </div>
         </div>
       </div>
     </section>    
@@ -59,22 +59,22 @@
       <div>
         <ul class="vouchers">
           <li>
-            <a class="btn" id="five-pound-voucher" ng-class="ctrl.products.fivePoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFivePoundDiscount()">£5 off voucher
-            </a>
+            <a class="btn" id="five-pound-voucher" ng-class="ctrl.products.fivePoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFivePoundDiscount()">£5 off voucher</a>
           </li>
           <li>
-            <a class="btn" id="ten-pound-voucher" ng-class="ctrl.products.tenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyTenPoundDiscount()">£10 off voucher
-            </a>
+            <a class="btn" id="ten-pound-voucher" ng-class="ctrl.products.tenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyTenPoundDiscount()">£10 off voucher</a>
           </li>
           <li>
-            <a class="btn" id="fifteen-pound-voucher" ng-class="ctrl.products.fifteenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFifteenPoundDiscount()">£15 off voucher
-            </a>
+            <a class="btn" id="fifteen-pound-voucher" ng-class="ctrl.products.fifteenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFifteenPoundDiscount()">£15 off voucher</a>
           </li>
           <li>
-            <p id="sub-total">Sub Total: {{ctrl.products.subTotal() | currency:"£"}}</p>
+            <p id="sub-total">Basket Total: {{ctrl.products.subTotal() | currency:"£"}}</p>
           </li>
           <li>
-            <p id="basket-total">Total : {{ctrl.products.basketTotal| currency:"£"}}</p>
+            <p id="discount-total"><strong>Total Discount: {{ctrl.products.discountTotal() | currency:"£"}}</strong></p>
+          </li>
+          <li>
+            <p id="basket-total">Final Amount : {{ctrl.products.basketTotal| currency:"£"}}</p>
           </li>
         </ul>
         <button ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
