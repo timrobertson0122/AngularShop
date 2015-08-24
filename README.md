@@ -19,6 +19,16 @@ Technologies
 * Feature tested with Protractor
 * Styled with Bootstrap
 
+Prerequisites
+-------------
+
+You will need the following installed locally:  
+
+* Node.js
+* NPM
+* Bower
+* Express
+
 Site Setup
 ----------
 
@@ -30,13 +40,16 @@ Site Setup
 Testing Setup
 -------------
 
-For unit tests, run ```npm test``` in the command line
+For unit tests, run ```npm test``` in the command line:
+
+![Unit Tests](public/images/unit-tests.png)  
 
 For feature tests, run the following in the command line:
 * ```npm start ```
 * ```webdriver-manager start```
 * ```protractor test/e2e/conf.js```
 
+![Feature Tests](public/images/feature-tests.png)
 
 User Stories
 ------------
