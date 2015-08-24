@@ -40,15 +40,15 @@
                             <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
                                 <img ng-src="{{item.image}}">
                                 <div class="shop-item caption">
-                                    <strong>{{item.name}}<span class="pull-right">{{item.price | currency:"£"}}</span></strong>
-                                    <p>{{item.category}}<span class="pull-right">{{item.quantity}} available</span></p>
+                                    <strong>{{item.name}}</strong>
+                                    <p>{{item.price | currency:"£"}}<span class="pull-right">{{item.quantity}} available</span></p>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
-            <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-sm-4">
+            <div id="shopping-basket-container" data-spy="affix" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-4 col-md-offset-7" style="position:fixed">
                 <h3>Shopping Basket</h3>
                 <ul id="shopping-basket">
                     <li class="divider"></li>

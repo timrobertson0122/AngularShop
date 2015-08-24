@@ -44,9 +44,11 @@ h3 {
 #shopping-basket-container {
     border: solid;
     border-color: #337ab7;
-    margin-top: 75px;
+    margin-top: 40px;
+    margin-right: 0px;
     padding-bottom: 40px;
-    background-color: #F5F5F5
+    background-color: #F5F5F5;
+    float: right;
 }
 
 #sub-total {
