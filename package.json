@@ -6,7 +6,7 @@
     "node": "0.10.x",
     "npm": "2.1.x"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "karma start test/unit/karma.conf.js"
   },
