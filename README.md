@@ -28,6 +28,7 @@ You will need the following installed locally:
 * NPM
 * Bower
 * Express
+* Protractor with webdriver-manager
 
 Site Setup
 ----------
