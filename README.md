@@ -3,7 +3,7 @@
 
 # AngularShop
 
-![Screen shot](public/images/screenshot.png)
+![Browser](public/images/screenshot-browser.png)
 
 Brief
 -----
@@ -32,19 +32,22 @@ You will need the following installed locally:
 Site Setup
 ----------
 
-* Clone this repo
-* Run ```bower install``` and ```npm install``` in the command line
-* Run ```npm start``` in the command line
-* Navigate to ```localhost:4567``` in your browser.  
+* Execute the following in the command line:
+* ```Git clone https://github.com/timrobertson0122/AngularShop.git```
+* cd AngularShop
+* ```bower install``` and ```npm install```
+* ```npm start```
+
+Navigate to ```localhost:4567``` in your browser.  
 
 Testing Setup
 -------------
 
-For unit tests, run ```npm test``` in the command line:
+For unit tests, run ```npm test``` in the command line (from within the projects' root directory):
 
 ![Unit Tests](public/images/unit-tests.png)  
 
-For feature tests, run the following in the command line:
+For feature tests, run the following in the command line (from within the projects' root directory):
 * ```npm start ```
 * ```webdriver-manager start```
 * ```protractor test/e2e/conf.js```
@@ -84,6 +87,7 @@ Vouchers
 Future Features
 ---------------
 
+* Update item quantity when multiple items are added to the basket, rather than a new entry for each duplicate item.
 * Better styling, e.g. hover over image 'Add to Basket' text
 * Consider ng-show logic to only display available vouchers based on current products in shopping basket
 * Individual product info pages
