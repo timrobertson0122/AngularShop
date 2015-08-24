@@ -1,3 +1,7 @@
+body {
+  padding-top: 50px;
+}
+
 a {
   cursor: pointer; cursor: hand;
   text-decoration: none;
@@ -36,6 +40,7 @@ h3 {
 #shopping-basket-container {
   border: solid;
   border-color: #337ab7;
+  margin-top: 75px;
   padding-bottom: 40px;
 }
 
@@ -61,7 +66,7 @@ h3 {
 }
 
 .navbar-default {
-  background-color: #337ab7;
+  background-color: green;
   border-color: #E7E7E7;
 }
 
@@ -79,6 +84,6 @@ h3 {
   padding-left: 0px;
 }
 
-.thumbnail:hover {
-  background-color: yellow;
+.products:hover {
+  outline: gray solid thin;
 }

@@ -52,16 +52,16 @@ describe('Clothes Shopping Site', function() {
     });
 
     it('can apply a £10 discount voucher when the basket subtotal is greater than £50', function () {
-      element.all(by.css(".addToBasketButton")).last().click();
+      element(by.cssContainingText('.shop-item', 'Almond Toe Court Shoes, Patent Black')).click();
       element(by.id('ten-pound-voucher')).click();
-      expect(element(by.id('basket-total')).getText()).toContain('£165.50');
+      expect(element(by.id('basket-total')).getText()).toContain('£89.00');
     });
 
     it('can apply a £15 discount voucher when the basket contains at least 1 item of footwear and total is at least £75', function() {
-      element(by.cssContainingText('.shop-item', 'Suede Shoes, Blue')).click();
+      element(by.cssContainingText('.shop-item', 'Almond Toe Court Shoes, Patent Black')).click();
       element(by.cssContainingText('.shop-item', 'Gold Button Cardigan, Black')).click();
       element(by.id('fifteen-pound-voucher')).click();
-      expect(element(by.id('basket-total')).getText()).toContain('£194.00');
+      expect(element(by.id('basket-total')).getText()).toContain('£251.00');
     });
 
     xit('displays an error message if £10 discount voucher is selected on a basket total below £50', function() {
