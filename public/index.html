@@ -26,7 +26,7 @@
             <div flash-message="4000" class="errors" id="errors"></div>
             <section class="col-sm-8 no-padding-left">
                 <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
-                    <h3>{{header}}</h3>
+                    <h2>{{header}}</h2>
                     <div class="Items" ng-repeat="item in category">
                         <div class="col-sm-3 col-md-3 col-lg-3 products">
                             <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
@@ -40,12 +40,12 @@
                     </div>
                 </div>
             </section>
-            <div id="shopping-basket-container" data-spy="affix" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-4">
+            <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-4">
                 <h3>Shopping Basket</h3>
                 <ul id="shopping-basket">
                     <li class="divider"></li>
                     <li ng-repeat="(index, basketItem) in ctrl.products.shoppingBasket track by $index">
-                        <p class="basket-item" id="basket-item-{{index}}">{{basketItem.name}}</p>
+                        <p class="basket-item" id="basket-item-{{index}}">{{basketItem.name | limitTo: 30 }}</p>
                         <p class="pull-right basket-price">{{basketItem.price | currency:"£"}}</p><a ng-click="ctrl.products.removeItemFromBasket(basketItem)" class="remove-basket-item pull-right">remove</a>
                     </li>
                 </ul>
