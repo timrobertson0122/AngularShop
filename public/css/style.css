@@ -8,7 +8,7 @@ a {
     text-decoration: none;
 }
 
-h3 {
+h1, h2, h3 {
     text-align: center;
 }
 
@@ -17,15 +17,8 @@ h3 {
     float: right;
 }
 
-#brand,
-#search-box {
+#brand {
     color: #FFFFFF;
-}
-
-#error-message {
-    width: 100%;
-    text-align: center;
-    color: red;
 }
 
 #five-pound-voucher,

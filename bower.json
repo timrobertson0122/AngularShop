@@ -13,7 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
     "angular": "~1.4.4",
     "angular-resource": "~1.4.4",
