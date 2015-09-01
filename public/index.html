@@ -31,7 +31,7 @@
                 <h3>{{header}}</h3>
                 <div class="Items" ng-repeat="item in category">
                     <div class="col-sm-4 col-md-3 products">
-                        <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
+                        <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" title="Add to Basket">
                             <img ng-src="{{item.image}}">
                             <div class="shop-item caption">
                                 <strong>{{item.name}}</strong>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-8">
+        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-7">
             <h3>Shopping Basket</h3>
             <ul class="shopping-basket">
                 <li class="divider"></li>
