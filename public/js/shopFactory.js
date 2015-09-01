@@ -60,13 +60,13 @@ clothesShop.factory('Products', ['Flash', function(Flash){
     };
 
     service.addItemToBasket = function(item) {
-        if (service.itemAvailable(item)) {
+        if (!service.itemAvailable(item)) {
+            Flash.create('danger', 'Sorry, that item is out of stock.');
+        } else {
             shoppingBasket.push(item);
             service.shoppingBasketVisible = true;
             service.availableDiscounts();
             item.quantity--;
-        } else {
-            Flash.create('danger', 'Sorry, that item is out of stock.');
         };
         service.getBasketTotal();
     };

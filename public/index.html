@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ClothesShop">
-
+<html lang="en" 
+      ng-app="ClothesShop">
 <head>
     <meta charset="utf-8">
     <title>Angular Shop</title>
@@ -9,64 +9,73 @@
 </head>
 
 <body ng-controller="ShopController as ctrl">
-    <div class="container">
-        <nav class="navbar navbar-fixed-top navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a id="brand" class="navbar-brand" href="/">Angular Shop</a>
-                </div>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular Shop</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="pull-right">
-                        <a><span id="basket-header-total" class="badge">Basket Total : {{ctrl.products.basketTotal| currency:"£"}}</span></a>
+                        <a><span class="basket-header-total" class="badge">Basket Total : {{ctrl.products.basketTotal| currency:"£"}}</span></a>
                     </li>
                 </ul>
             </div>
-        </nav>
-        <div>
-            <div flash-message="4000" class="errors" id="errors"></div>
-            <section class="col-sm-8 no-padding-left">
-                <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
-                    <h2>{{header}}</h2>
-                    <div class="Items" ng-repeat="item in category">
-                        <div class="col-sm-3 col-md-3 col-lg-3 products">
-                            <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
-                                <img ng-src="{{item.image}}">
-                                <div class="shop-item caption">
-                                    <strong>{{item.name}}</strong>
-                                    <p>{{item.price | currency:"£"}}<span class="pull-right">{{item.quantity}} available</span></p>
-                                </div>
-                            </a>
-                        </div>
+
+        </div>
+    </nav>
+
+    <div class="container main-content">
+
+        <div flash-message="4000" class="errors"></div>
+
+        <div class="col-sm-8 no-padding-left">
+            <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
+                <h2>{{header}}</h2>
+                <div class="Items" ng-repeat="item in category">
+                    <div class="col-sm-3 col-md-3 products">
+                        <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
+                            <img ng-src="{{item.image}}">
+                            <div class="shop-item caption">
+                                <strong>{{item.name}}</strong>
+                                <p>{{item.price | currency:"£"}}<span class="pull-right">{{item.quantity}} available</span></p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </section>
-            <div id="shopping-basket-container" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-4">
-                <h3>Shopping Basket</h3>
-                <ul id="shopping-basket">
-                    <li class="divider"></li>
-                    <li ng-repeat="(index, basketItem) in ctrl.products.shoppingBasket track by $index">
-                        <p class="basket-item" id="basket-item-{{index}}">{{basketItem.name | limitTo: 30 }}</p>
-                        <p class="pull-right basket-price">{{basketItem.price | currency:"£"}}</p><a ng-click="ctrl.products.removeItemFromBasket(basketItem)" class="remove-basket-item pull-right">remove</a>
+            </div>
+        </div>
+        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-8" style="position:fixed">
+            <h3>Shopping Basket</h3>
+            <ul class="shopping-basket">
+                <li class="divider"></li>
+                <li ng-repeat="(index, basketItem) in ctrl.products.shoppingBasket track by $index">
+                    <p class="basket-item" id="basket-item-{{index}}">{{basketItem.name | limitTo: 30 }}</p>
+                    <p class="basket-price">{{basketItem.price | currency:"£"}}</p><span class=" pull-right glyphicon glyphicon-remove remove" ng-click="ctrl.products.removeItemFromBasket(basketItem)"></span> 
+                </li>
+            </ul>
+            <div>
+                <ul class="vouchers">
+                    <li><a class="btn" id="five-pound-voucher" ng-class="ctrl.products.fivePoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFivePoundDiscount()">£5 off voucher</a></li>
+                    <li><a class="btn" id="ten-pound-voucher" ng-class="ctrl.products.tenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyTenPoundDiscount()">£10 off voucher</a></li>
+                    <li><a class="btn" id="fifteen-pound-voucher" ng-class="ctrl.products.fifteenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFifteenPoundDiscount()">£15 off voucher</a></li>
+                    <li>
+                        <p class="pull-right sub-total">Basket Total: {{ctrl.products.subTotal() | currency:"£"}}</p>
+                    </li>
+                    <li>
+                        <p id="discount-total"><strong>Total Discount: {{ctrl.products.discountTotal() | currency:"£"}}</strong></p>
+                    </li>
+                    <li>
+                        <p class="basket-total">Final Amount : {{ctrl.products.basketTotal| currency:"£"}}</p>
                     </li>
                 </ul>
-                <div>
-                    <ul class="vouchers">
-                        <li><a class="btn" id="five-pound-voucher" ng-class="ctrl.products.fivePoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFivePoundDiscount()">£5 off voucher</a></li>
-                        <li><a class="btn" id="ten-pound-voucher" ng-class="ctrl.products.tenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyTenPoundDiscount()">£10 off voucher</a></li>
-                        <li><a class="btn" id="fifteen-pound-voucher" ng-class="ctrl.products.fifteenPoundDiscount ? 'btn-success' : 'btn-danger'" ng-click="ctrl.products.applyFifteenPoundDiscount()">£15 off voucher</a></li>
-                        <li>
-                            <p id="sub-total">Basket Total: {{ctrl.products.subTotal() | currency:"£"}}</p>
-                        </li>
-                        <li>
-                            <p id="discount-total"><strong>Total Discount: {{ctrl.products.discountTotal() | currency:"£"}}</strong></p>
-                        </li>
-                        <li>
-                            <p id="basket-total">Final Amount : {{ctrl.products.basketTotal| currency:"£"}}</p>
-                        </li>
-                    </ul>
-                    <button ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
-                </div>
+                <button ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
             </div>
+        </div>
+    </div>
+
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>

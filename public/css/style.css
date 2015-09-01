@@ -12,13 +12,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-#basket-total {
+.basket-total {
     clear: both;
     float: right;
-}
-
-#brand {
-    color: #FFFFFF;
 }
 
 #five-pound-voucher,
@@ -29,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-#shopping-basket {
+.shopping-basket {
     padding-left: 0px;
     list-style-type: none;
 }
@@ -40,10 +36,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
     padding-bottom: 40px;
     background-color: #F5F5F5;
-}
-
-#sub-total {
-    float: right;
 }
 
 .basket-item,
@@ -65,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     list-style-type: none;
 }
 
-.navbar-default {
+.navbar-inverse {
     background-color: green;
     border-color: #E7E7E7;
 }
