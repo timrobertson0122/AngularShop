@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
     padding-bottom: 40px;
     background-color: #F5F5F5;
+    position: fixed;
 }
 
 .basket-item,
@@ -55,11 +56,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .item-panel {
     list-style-type: none;
-}
-
-.navbar-inverse {
-    background-color: green;
-    border-color: #E7E7E7;
 }
 
 .no-padding-left {

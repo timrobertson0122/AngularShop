@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Angular Shop</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/paper-theme.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -14,7 +15,6 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Angular Shop</a>
             </div>
-
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="pull-right">
@@ -22,19 +22,15 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </nav>
-
+        <div flash-message="4000"></div>
     <div class="container main-content">
-
-        <div flash-message="4000" class="errors"></div>
-
         <div class="col-sm-8 no-padding-left">
             <div class="categories container" ng-repeat="(header,category) in ctrl.products.productList">
-                <h2>{{header}}</h2>
+                <h3>{{header}}</h3>
                 <div class="Items" ng-repeat="item in category">
-                    <div class="col-sm-3 col-md-3 products">
+                    <div class="col-sm-4 col-md-3 products">
                         <a ng-click="ctrl.products.addItemToBasket(item)" class="addToBasketButton" data-toggle="tooltop" title="Add to Basket">
                             <img ng-src="{{item.image}}">
                             <div class="shop-item caption">
@@ -46,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-8" style="position:fixed">
+        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-8">
             <h3>Shopping Basket</h3>
             <ul class="shopping-basket">
                 <li class="divider"></li>
