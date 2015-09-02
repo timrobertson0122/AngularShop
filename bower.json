@@ -15,7 +15,6 @@
   "dependencies": {
     "angular": "~1.4.4",
     "angular-flash-alert": "~1.1.1",
-    "angular-resource": "~1.4.4",
     "bootstrap": "~3.3.5"
   },
   "devDependencies": {

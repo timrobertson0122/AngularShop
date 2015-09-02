@@ -1,4 +1,4 @@
-clothesShop.controller('ShopController', ['$http', '$scope', 'Products', function($http, $scope, Products) {
+clothesShop.controller('ShopController', ['Products', function(Products) {
 
     this.products = Products;
     

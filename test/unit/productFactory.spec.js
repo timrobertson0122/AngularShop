@@ -38,23 +38,27 @@ describe('factory: Products', function() {
 
         it('can add a product to the shopping basket', function() {
             products.addItemToBasket(sampleItemShoes);
+            
             expect(products.shoppingBasket).toEqual([sampleItemShoes]);
         });
 
         it('sets the shopping basket to visible when it contains at least one item', function() {
             products.addItemToBasket(sampleItemShoes);
+            
             expect(products.shoppingBasketVisible).toEqual(true);
         });
 
         it('can add multiple items to the shopping basket', function() {
             products.addItemToBasket(sampleItemShoes);
             products.addItemToBasket(sampleItemNotShoes);
+            
             expect(products.shoppingBasket).toEqual([sampleItemShoes, sampleItemNotShoes]);
         });
 
         it('can remove a product from the shopping basket', function() {
             products.addItemToBasket(sampleItemShoes);
             products.removeItemFromBasket(sampleItemShoes);
+            
             expect(products.shoppingBasket).toEqual([]);
         });
 
@@ -62,6 +66,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemShoes);
             products.addItemToBasket(sampleItemShoes);
             products.removeItemFromBasket(sampleItemShoes);
+            
             expect(products.shoppingBasket).toEqual([sampleItemShoes]);
         });
 
@@ -69,24 +74,28 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemShoes);
             products.addItemToBasket(sampleItemShoes);
             products.emptyBasket();
+            
             expect(products.shoppingBasket).toEqual([]);
         });
 
         it('sets the shopping basket to hidden when all items are removed', function() {
             products.addItemToBasket(sampleItemShoes);
             products.emptyBasket();
+            
             expect(products.shoppingBasketVisible).toEqual(false);
         });
 
         it('knows the total cost of the products in the shopping basket', function() {
             products.addItemToBasket(sampleItemShoes);
             products.addItemToBasket(sampleItemNotShoes);
+            
             expect(products.basketTotal).toEqual(72.00);
         });
 
         it('adding a product to the shopping basket reduces that products quantity by one', function() {
             expect(sampleItemShoes.quantity).toEqual(4);
             products.addItemToBasket(sampleItemShoes);
+            
             expect(sampleItemShoes.quantity).toEqual(3);
         });
 
@@ -94,6 +103,7 @@ describe('factory: Products', function() {
             for (var i = 5; i >= 0; i--) {
                 products.addItemToBasket(sampleItemShoes);
             };
+            
             expect(products.shoppingBasket.length).toEqual(4);
         });
     });
@@ -136,6 +146,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemNotShoes);
             products.applyFivePoundDiscount();
             products.applyFivePoundDiscount();
+            
             expect(products.basketTotal).toEqual(25);
         });
 
@@ -144,6 +155,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemShoes);
             products.applyTenPoundDiscount();
             products.applyTenPoundDiscount();
+            
             expect(products.basketTotal).toEqual(74);
         });
 
@@ -153,6 +165,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemNotShoes);
             products.applyFifteenPoundDiscount();
             products.applyFifteenPoundDiscount();
+            
             expect(products.basketTotal).toEqual(99);
         });
 
@@ -160,6 +173,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemNotShoes);
             products.applyFivePoundDiscount();
             products.removeItemFromBasket(sampleItemNotShoes);
+            
             expect(products.basketTotal).toEqual(0);
         });
 

@@ -147,16 +147,20 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
         if (service.shoppingBasket.length === 0) {
             service.shoppingBasketVisible = false;
         }
+        item.quantity++;
         service.getBasketTotal();
     };
 
     service.emptyBasket = function() {
-        shoppingBasket.length = 0;
+        for (var i = shoppingBasket.length -1; i >= 0; i--) {
+            shoppingBasket[i].quantity++;
+        }
+        shoppingBasket = [];
         service.shoppingBasketVisible = false;
         service.getBasketTotal();
     };
 
-    service.orderShoes = function() {
+    service.ShoesInBasket = function() {
         for (var i = shoppingBasket.length - 1; i >= 0; i--) {
             if (shoppingBasket[i].category.indexOf("Footwear") >= 0) {
                 return true;
@@ -181,7 +185,7 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
     };
 
     service.applyFifteenPoundDiscount = function() {
-        if (service.basketTotal < 75.00 || !service.orderShoes()) {
+        if (service.basketTotal < 75.00 || !service.ShoesInBasket()) {
             Flash.create('danger', 'Sorry, discount only available for orders over £75 and including at least one item of footwear');
         } else if (service.fifteenPoundDiscount) {
             service.basketTotal -= 15.00;
