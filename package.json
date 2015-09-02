@@ -8,7 +8,10 @@
   },
   "main": "server.js",
   "scripts": {
-    "test": "karma start test/unit/karma.conf.js"
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "node app.js",
+    "test": "karma start ./test/unit/karma.conf.js"
   },
   "author": "",
   "license": "ISC",
