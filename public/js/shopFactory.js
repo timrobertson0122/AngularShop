@@ -153,8 +153,7 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
             shoppingBasket[i].quantity++;
         }
         shoppingBasket.length = 0;
-        shoppingBasket = [];
-        service.shoppingBasketVisible();
+        // shoppingBasket = [];
         service.getBasketTotal();
     };
 
