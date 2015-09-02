@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible" class="ng-hide col-md-3 col-md-offset-7">
+        <div id="shopping-basket-container" data-spy="affix" data-offset-top="200" ng-show="ctrl.products.shoppingBasketVisible()" class="ng-hide col-md-3 col-md-offset-7">
             <h3>Shopping Basket</h3>
             <ul class="shopping-basket">
                 <li class="divider"></li>
@@ -66,7 +66,7 @@
                         <p class="basket-total">Final Amount : {{ctrl.products.basketTotal| currency:"£"}}</p>
                     </li>
                 </ul>
-                <button ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
+                <button ng-show="ctrl.products.shoppingBasketVisible()" ng-click="ctrl.products.emptyBasket()" class="btn btn-info clearBasket">Clear Basket</button>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@ describe('factory: Products', function() {
         });
 
         it('is hidden upon initialisation', function() {
-            expect(products.shoppingBasketVisible).toEqual(false);
+            expect(products.shoppingBasketVisible()).not.toBe(true);
         });
 
         it('has a total of zero upon initialisation', function() {
@@ -45,7 +45,7 @@ describe('factory: Products', function() {
         it('sets the shopping basket to visible when it contains at least one item', function() {
             products.addItemToBasket(sampleItemShoes);
             
-            expect(products.shoppingBasketVisible).toEqual(true);
+            expect(products.shoppingBasketVisible()).toEqual(true);
         });
 
         it('can add multiple items to the shopping basket', function() {
@@ -82,7 +82,7 @@ describe('factory: Products', function() {
             products.addItemToBasket(sampleItemShoes);
             products.emptyBasket();
             
-            expect(products.shoppingBasketVisible).toEqual(false);
+            expect(products.shoppingBasketVisible()).not.toBe(true);
         });
 
         it('knows the total cost of the products in the shopping basket', function() {

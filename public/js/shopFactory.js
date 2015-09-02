@@ -5,7 +5,6 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
 
     service.basketTotal = 0;
     service.shoppingBasket = shoppingBasket;
-    service.shoppingBasketVisible = false;
     service.fivePoundDiscount = false;
     service.tenPoundDiscount = false;
     service.fifteenPoundDiscount = false;
@@ -135,7 +134,7 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
             Flash.create('danger', 'Sorry, that item is out of stock.');
         } else {
             shoppingBasket.push(item);
-            service.shoppingBasketVisible = true;
+            service.shoppingBasketVisible();
             service.availableDiscounts();
             item.quantity--;
         };
@@ -144,10 +143,8 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
 
     service.removeItemFromBasket = function(item) {
         shoppingBasket.pop(item);
-        if (service.shoppingBasket.length === 0) {
-            service.shoppingBasketVisible = false;
-        }
         item.quantity++;
+        service.shoppingBasketVisible();
         service.getBasketTotal();
     };
 
@@ -155,9 +152,16 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
         for (var i = shoppingBasket.length -1; i >= 0; i--) {
             shoppingBasket[i].quantity++;
         }
+        shoppingBasket.length = 0;
         shoppingBasket = [];
-        service.shoppingBasketVisible = false;
+        service.shoppingBasketVisible();
         service.getBasketTotal();
+    };
+
+    service.shoppingBasketVisible = function() {
+        if (service.shoppingBasket.length > 0) {
+            return true;
+        }
     };
 
     service.ShoesInBasket = function() {
