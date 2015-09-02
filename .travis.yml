@@ -10,4 +10,4 @@ before_script:
   - sleep 3
 script:
   - ./node_modules/karma/bin/karma start test/unit/karma.conf.js
-  - ./node_modules/.bin/protractor ./test/e2e/conf.js --browser=chrome
+  - ./node_modules/.bin/protractor test/e2e/conf.js --browser=chrome
