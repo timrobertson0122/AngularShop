@@ -1,5 +1,30 @@
 body {
-    padding-top: 50px;
+    padding-top: 70px;
+}
+
+@media all and (min-width: 768px) {
+  .navbar-fixed-width {
+    width: 768px;
+    margin-left: auto;
+    margin-right:auto;
+ }
+}
+
+@media all and (min-width: 992px) {
+  .navbar-fixed-width {
+    width: 992px;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+}
+
+@media all and (min-width: 1200px) {
+  .navbar-fixed-width {
+    width: 1200px;
+    margin-left: auto;
+    margin-right:auto;
+  }
 }
 
 a {
@@ -36,7 +61,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
     padding-bottom: 40px;
     background-color: #F5F5F5;
-    position: fixed;
 }
 
 .basket-item,
@@ -70,8 +94,4 @@ h1, h2, h3, h4, h5, h6 {
 .vouchers {
     list-style-type: none;
     padding-left: 0px;
-}
-
-.products:hover {
-    outline: gray solid thin;
 }

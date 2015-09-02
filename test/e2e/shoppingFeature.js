@@ -26,7 +26,7 @@ describe('Clothes Shopping Site', function() {
     });
 
     it('can remove a product from the shopping basket, and reset the total to zero', function() {
-        element.all(by.css(".addToBasketButton")).first().click();
+        element.all(by.id("addToBasketButton")).first().click();
         element(by.css(".remove")).click();
         expect(element(by.css('.shopping-basket')).isDisplayed()).toBe(false);
         expect(element(by.css('.basket-header-total')).getText()).toContain('£0.00');
