@@ -10,7 +10,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "karma start ./test/unit/karma.conf.js"
   },
   "author": "",
