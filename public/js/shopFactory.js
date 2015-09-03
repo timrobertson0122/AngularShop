@@ -149,11 +149,10 @@ clothesShop.factory('Products', ['Flash', function(Flash) {
     };
 
     service.emptyBasket = function() {
-        for (var i = shoppingBasket.length -1; i >= 0; i--) {
+        for (var i = shoppingBasket.length - 1; i >= 0; i--) {
             shoppingBasket[i].quantity++;
         }
         shoppingBasket.length = 0;
-        // shoppingBasket = [];
         service.getBasketTotal();
     };
 
